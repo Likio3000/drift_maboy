@@ -1,0 +1,13 @@
+jsonschema<5
+oslash<1
+
+[examples]
+aiohttp
+aiozmq
+flask
+flask-socketio
+gmqtt
+pyzmq
+tornado
+websockets
+werkzeug

@@ -1,0 +1,108 @@
+Metadata-Version: 2.1
+Name: jito_searcher_client
+Version: 0.1.4
+Summary: Jito Labs Python Searcher Client
+Author: Jito Labs
+Author-email: support@jito.wtf
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: grpcio (>=1.62.1,<2.0.0)
+Requires-Dist: protobuf (>=4.25.3,<5.0.0)
+Requires-Dist: solana (==0.34.0)
+Description-Content-Type: text/markdown
+
+# About
+This library contains tooling to interact with Jito Lab's Block Engine as a searcher.
+
+# Downloading
+```bash
+$ pip install jito_searcher_client
+```
+
+# Keypair Authentication
+Please request access to the block engine by creating a solana keypair and emailing the public key to support@jito.wtf.
+
+# Examples
+
+## Sync Client
+
+```python
+from jito_searcher_client import get_searcher_client
+from jito_searcher_client.generated.searcher_pb2 import ConnectedLeadersRequest
+
+from solders.keypair import Keypair
+
+KEYPAIR_PATH = "/path/to/authenticated/keypair.json"
+BLOCK_ENGINE_URL = "frankfurt.mainnet.block-engine.jito.wtf"
+
+with open(KEYPAIR_PATH) as kp_path:
+    kp = Keypair.from_json(kp_path.read())
+
+client = get_searcher_client(BLOCK_ENGINE_URL, kp)
+leaders = client.GetConnectedLeaders(ConnectedLeadersRequest())
+print(f"{leaders=}")
+```
+
+## Async Client
+
+```python
+import asyncio
+
+from jito_searcher_client import get_async_searcher_client
+from jito_searcher_client.generated.searcher_pb2 import ConnectedLeadersRequest
+
+from solders.keypair import Keypair
+
+KEYPAIR_PATH = "/path/to/authenticated/keypair.json"
+BLOCK_ENGINE_URL = "frankfurt.mainnet.block-engine.jito.wtf"
+
+async def main():
+    with open(KEYPAIR_PATH) as kp_path:
+        kp = Keypair.from_json(kp_path.read())
+    client = await get_async_searcher_client(BLOCK_ENGINE_URL, kp)
+    leaders = await client.GetConnectedLeaders(ConnectedLeadersRequest())
+    print(f"{leaders=}")
+
+asyncio.run(main())
+```
+
+# Development
+
+Install pip
+```bash
+$ curl -sSL https://bootstrap.pypa.io/get-pip.py | python 3 -
+```
+
+Install poetry
+```bash
+$ curl -sSL https://install.python-poetry.org | python3 -
+```
+
+Setup environment and build protobufs
+```bash
+$ poetry install
+$ poetry shell
+$ poetry protoc
+```
+
+Linting
+```bash
+$ poetry run black .
+$ poetry run isort .
+```
+
+Linting:
+```bash
+poetry run isort .
+poetry run black .
+```
+
+Publishing package
+```bash
+$ poetry protoc && poetry build && poetry publish
+```
+
