@@ -5,12 +5,12 @@ FREQUENCY_SECONDS = 600
 
 # ==================== Public key Configuration ====================
 # Ensure you copy your subaccount Public address
-HARDCODED_ACCOUNT = "ELT8NKTqWjgjPHmVAAw3xYPLBcub3LtgCnCoW8iUCiHa"
+HARDCODED_ACCOUNT = "A5oadvsuiMmnRTmN2p8U4hMxU3a91GLSTCsWeGsjNZpL"
 
 # Some specific signatures for testing (set some signatures where of trades in which you got filled; through Drift UI you can pick them under ""TRADES""")                                                                              # DELETE DELETE DELETE DELETE DELETE DELETE DELETE
 TEST_SIGNATURES = [                                                                                                        
-    "3J3heawQL6otmmHbaUy4AHcFwZ1cMdMjzV7nq3KzrahRUyb2R9wGZCBHc17GZ6HSqSUYF9mimqmxZETUV6oT4QS9",                        
-    "xi7zwtGaYCCaNsWR3zoPA38PU1SBzFqgTHHhxVhA65E9mp1cR42z8J4o2LKcq1dRj8RP6Nswa3eAdza1qziYRf6"                          
+    "5v5byP2bk3D2Y52c5R8MH4QwoZ4xppfRkXdZCvfF1XkW513RdG29sqUbFPpxwkF2UVy82F6FCpB5AhSNgviLs1tX",                        
+    "WgDUqy9MTVPP9qzs1RT6vKovTL3m2L5ze9MSrVLQtUefQdQhoXr2RTQqPnJMa879HEQBzj29mCeN69wpiBmzv58"                          
 ]
 
 # Define the words or phrases to search for within log messages; Program names for getting filled are:
@@ -19,4 +19,4 @@ LOG_SEARCH_TERMS = ["FillPerpOrder", "RevertFill"]
 # Define Email settings
 EMAIL_SUBJECT = "New Transaction Detected"
 EMAIL_BODY = "A new transaction has been detected for the tracked account."
-RECEIVER_EMAIL = "likio3000@gmail.com"
+RECEIVER_EMAIL = "put your email@something.com"

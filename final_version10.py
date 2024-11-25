@@ -27,7 +27,7 @@ import re
 # - HELIUS_RPC_URL: Your free tier HELIUS rpc url, if you use free public rpc you may need to slow down the signatures inspections yourself
 
 # Example command to run the script with test signatures included:
-# python final_version3.py --include_test_sigs
+# python final_version10.py --include_test_sigs
 
 
 # ==================== Frequency Configuration ====================
@@ -404,6 +404,6 @@ if __name__ == "__main__":
 
 # ==================== Usage ====================
 # Example command to run the script with test signatures included:
-# python final_version3.py --include_test_sigs
+# python final_version10.py --include_test_sigs
 
 # =================================================
