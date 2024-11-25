@@ -51,7 +51,7 @@ The script runs periodically (every 10 minutes by default) and can be customized
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/solana-transaction-monitor.git
+   git clone https://github.com/Likio3000/drift_maboy.git
    cd solana-transaction-monitor
    ```
 
@@ -104,7 +104,7 @@ The script runs periodically (every 10 minutes by default) and can be customized
 
 ### Script Variables
 
-Open the script (`final_version10.py`) and adjust the following variables as needed:
+Open the script (`main.py`) and adjust the following variables as needed:
 
 - **FREQUENCY_SECONDS**: Set the frequency in seconds for how often the script checks for new transactions.
 
@@ -151,7 +151,7 @@ Open the script (`final_version10.py`) and adjust the following variables as nee
 Run the script using Python:
 
 ```bash
-python final_version10.py
+python main.py
 ```
 
 ### Command-Line Arguments
@@ -161,25 +161,25 @@ The script supports several optional command-line arguments:
 - **--rpc_override**: Specify a different RPC endpoint.
 
   ```bash
-  python final_version10.py --rpc_override "https://your.custom.rpc.url"
+  python main.py --rpc_override "https://your.custom.rpc.url"
   ```
 
 - **--before_sig**: Fetch transactions that occurred before a specific signature.
 
   ```bash
-  python final_version10.py --before_sig "SpecificSignature"
+  python main.py --before_sig "SpecificSignature"
   ```
 
 - **--workers**: Set the number of concurrent workers for fetching transactions (default is 5).
 
   ```bash
-  python final_version10.py --workers 10
+  python main.py --workers 10
   ```
 
 - **--include_test_sigs**: Include test signatures defined in `TEST_SIGNATURES` for inspection.
 
   ```bash
-  python final_version10.py --include_test_sigs
+  python main.py --include_test_sigs
   ```
 
 ## Example
@@ -187,7 +187,7 @@ The script supports several optional command-line arguments:
 To run the script with test signatures included and using 10 workers:
 
 ```bash
-python final_version10.py --include_test_sigs --workers 10
+python main.py --include_test_sigs --workers 10
 ```
 
 ## Troubleshooting
